@@ -37,7 +37,33 @@ void main(List<String> args) {
 
       if (money > 150) {
         print("Kredin hazır");
+        break;
       }
     }
   }
+
+// bankadaki musterilerin hesaplarinin toplam mevlasi nedir?
+
+  for (var name in vbBank.keys) {
+    int result = 0;
+    for (var money in vbBank[name]!) {
+      // vbBank[item] -> musterinin hesaplari
+
+      result += money;
+    }
+
+    print("$name senin toplam paran ==> $result");
+  }
+
+  //----------------------------
+
+  final etiketler = {
+    // Map kullanımı 'islem': sayı(1)
+    'arkadaslar': 2,
+    'okul': 5,
+    'iş': 8,
+  };
+  // Key value seklinde ilerlerler
+
+  print(etiketler["iş"]); // 8
 }

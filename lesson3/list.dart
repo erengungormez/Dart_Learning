@@ -59,4 +59,37 @@ void main() {
       print("var");
     }
   }
+
+//------------------------------------------------------------------------------------
+
+  final mesajlar = ['a', 'b', 'c']; // Koseli parantez kullanıılır.
+
+  print(mesajlar[0]); // 0.indeksi goster.
+
+  mesajlar.add('d'); // Listenin sonuna ekler
+
+  mesajlar.addAll(['e', 'f']); // Listenin sonuna ekler
+
+  print(mesajlar.length); // Listenin eleman sayisini gosterir
+
+  if (mesajlar.contains("a")) {
+    // Listede "a" var mı?
+    print("A var");
+  } else {
+    print("A yok");
+  }
+
+  mesajlar[0] =
+      "A"; //0. indeksi degistirme **Final var ama liste oldugu icin ici degistirilebilir.
+
+  mesajlar.remove("A"); // Silmek icin kullanilir.
+
+  mesajlar.remove(1); // indekse gore silme islemi yapilir7
+
+  print(mesajlar.first); // ilk mesaji gosterir
+  print(mesajlar.last); // son
+
+  for (var mesaj in mesajlar) {
+    print(mesaj); // Tum liste elemanlari gosterilir.
+  }
 }
