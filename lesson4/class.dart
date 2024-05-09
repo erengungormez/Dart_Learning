@@ -109,4 +109,57 @@ void controlCustomerAge(int value) {
   } else {
     print("İşlem yapamazsınız");
   }
+
+  //--------------------------------------------------
+
+  final ogrenci = {
+    'adi': 'Eren',
+    'soyadi': 'Gungormez',
+    'yas': 20,
+    'cinsiyet': 'Erkek',
+    'not': 90,
+  };
+
+  print(ogrenci);
+
+  final Eren = Ogrenci('Eren', 'Güngörmez', 20, 'Erkek', 95);
+  final Veli = Ogrenci('Yiğit', 'Güngörmez', 40, 'Erkek', 80);
+
+  print(Eren.adi); // 'Eren'
+  print(Eren); // Eren Gungormez 20 Erkek 95 False
+
+  if (Eren.ortalamaUstundaMi(70)) {
+    print('Bravo Eren');
+  } else
+    (print('Daha çok çalışmalısın.'));
+
+  if (Veli.ortalamaUstundaMi(95)) {
+    print('Bravo Veli');
+  } else
+    (print('Daha çok çalışmalısın.'));
+
+  print(Eren.adiSoyadi); // Eren Güngörmez
+}
+
+class Ogrenci {
+  String adi;
+  String soyadi;
+  int yas;
+  String cinsiyet;
+  int not;
+  bool mezunMu;
+
+  Ogrenci(this.adi, this.soyadi, this.yas, this.cinsiyet, this.not)
+      : mezunMu = false; //Constractor yapılarak parametre olarak alındı.
+
+  bool ortalamaUstundaMi(int ortalama) {
+    return ortalama < not;
+  }
+
+  String get adiSoyadi => '$adi $soyadi';
+
+  @override // Class  ı print edince bilgilerin çıkmasini saglar.
+  String toString() {
+    return '$adi $soyadi $yas $cinsiyet $not $mezunMu';
+  }
 }
